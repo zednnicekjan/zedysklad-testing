@@ -21,7 +21,7 @@ def cteni_stavu_senzoru():
         pole[i] = 1 if senzor.is_pressed else 0
 
 # Definice pinů pro optické senzory
-piny_senzoru = [21, 20, 16, 12, 1, 7, 8, 9, 10, 11]  # Upravte podle skutečných pinů na vaší desce
+piny_senzoru = [21, 20, 16, 12, 1, 23, 7, 8, 26, 24]  # Upravte podle skutečných pinů na vaší desce
 
 # Inicializace optických senzorů
 senzory = [Button(pin) for pin in piny_senzoru]
