@@ -5,6 +5,7 @@ import serial.tools.list_ports
 import serial
 import sys
 import time
+from threading import Thread
 
 app = App (height=480, width=800)
 app.bg = "#ff4d06"
@@ -32,10 +33,10 @@ def mereni_senzoru():
         time.sleep(1)
 
 # Spuštění funkce pro měření senzorů v novém vlákně
-from threading import Thread
 thread = Thread(target=mereni_senzoru)
 thread.start()
-# Funkce pro zobrazení obrázků na základě stavu pole
+
+
 
 #Zde jdu kontrolovat napájení arduina. Pokud nebude arduino napájené, tak vyskočí error okno na panelu.
 arduino = Button(17)
