@@ -35,27 +35,7 @@ def mereni_senzoru():
 # Spuštění funkce pro měření senzorů v novém vlákně
 thread = Thread(target=mereni_senzoru)
 thread.start()
-# Seznam tlačítek
-policka = [Policko_9, Policko_8, Policko_7, Policko_6, Policko_5, Policko_4, Policko_3, Policko_2, Policko_1, Policko_0]
 
-# Funkce pro aktualizaci tlačítek na základě stavů v poli
-def aktualizovat_tlacitka():
-    global pole
-    for i, hodnota in enumerate(pole):
-        if hodnota == 1:
-            policka[i].image = "logo_do_regalu_on.png"
-        else:
-            policka[i].image = "logo_do_regalu_off.png"
-
-# Spustit aktualizaci tlačítek pravidelně
-def spustit_aktualizaci():
-    while True:
-        aktualizovat_tlacitka()
-        time.sleep(1)  # Počkejte sekundu, než aktualizujete tlačítka znovu
-
-# Spuštění aktualizace tlačítek v novém vlákně
-aktualizace_thread = Thread(target=spustit_aktualizaci)
-aktualizace_thread.start()
 
 
 
@@ -305,7 +285,27 @@ Policko_2 = PushButton(regal, Policko2, image="logo_do_regalu_off.png", grid=[2,
 Policko_1 = PushButton(regal, Policko1, image="logo_do_regalu_off.png", grid=[3,1])
 Policko_0 = PushButton(regal, Policko0, image="logo_do_regalu_off.png", grid=[4,1])
 
+# Seznam tlačítek
+policka = [Policko_9, Policko_8, Policko_7, Policko_6, Policko_5, Policko_4, Policko_3, Policko_2, Policko_1, Policko_0]
 
+# Funkce pro aktualizaci tlačítek na základě stavů v poli
+def aktualizovat_tlacitka():
+    global pole
+    for i, hodnota in enumerate(pole):
+        if hodnota == 1:
+            policka[i].image = "logo_do_regalu_on.png"
+        else:
+            policka[i].image = "logo_do_regalu_off.png"
+
+# Spustit aktualizaci tlačítek pravidelně
+def spustit_aktualizaci_naskladnit():
+    while True:
+        aktualizovat_tlacitka()
+        time.sleep(2)  # Počkejte 2 sekundy, než aktualizujete tlačítka znovu
+
+# Spuštění aktualizace tlačítek v novém vlákně
+aktualizace_1_thread = Thread(target=spustit_aktualizaci_naskladnit)
+aktualizace_1_thread.start()
 
 #________________________________________________________________________________________________
 
@@ -387,7 +387,27 @@ Policko_2 = PushButton(regal2, Policko2, image="logo_do_regalu_off.png", grid=[2
 Policko_1 = PushButton(regal2, Policko1, image="logo_do_regalu_off.png", grid=[3,1])
 Policko_0 = PushButton(regal2, Policko0, image="logo_do_regalu_off.png", grid=[4,1])
 
+# Seznam tlačítek
+policka = [Policko_9, Policko_8, Policko_7, Policko_6, Policko_5, Policko_4, Policko_3, Policko_2, Policko_1, Policko_0]
 
+# Funkce pro aktualizaci tlačítek na základě stavů v poli
+def aktualizovat_tlacitka():
+    global pole
+    for i, hodnota in enumerate(pole):
+        if hodnota == 1:
+            policka[i].image = "logo_do_regalu_on.png"
+        else:
+            policka[i].image = "logo_do_regalu_off.png"
+
+# Spustit aktualizaci tlačítek pravidelně
+def spustit_aktualizaci_vyskladnit():
+    while True:
+        aktualizovat_tlacitka()
+        time.sleep(2)  # Počkejte sekundu, než aktualizujete tlačítka znovu
+
+# Spuštění aktualizace tlačítek v novém vlákně
+aktualizace_2_thread = Thread(target=spustit_aktualizaci_vyskladnit)
+aktualizace_2_thread.start()
 
 #_____________________________________________________________________________________________________
 
